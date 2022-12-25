@@ -33,17 +33,19 @@ export const Card = ({ item, nature }) => {
               <p>Terrain: {item.result.properties.terrain}</p>
             </>
           )}
-          <button
-            onClick={() => navigate(`record/${nature}/${item.result.uid}`)}
-            className="btn btn-outline-primary"
-          >
-            Learn more!
-          </button>
-          <button
-           className="btn btn-outline-warning"
-           >
-            💛
-            </button>
+            <div className="d-flex justify-content-between">
+              <button
+                onClick={() => navigate(`record/${nature}/${item.result.uid}`)}
+                className="btn btn-outline-primary"
+              >
+                Learn more!
+              </button>
+              <button
+              className="btn btn-outline-warning"
+              >
+                💛
+                </button>
+            </div>
         </div>
       </div>
     </div>

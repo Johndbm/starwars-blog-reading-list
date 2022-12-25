@@ -20,7 +20,7 @@ export const Navbar = () => {
 							Favorites <span className="badge bg-secondary">0</span>
 						</button>
 						<ul className="dropdown-menu">
-							<li>some item here</li>
+							<li>some item here</li><i class="bi bi-trash"></i>
 						</ul>
 					</div>
 					</Link>

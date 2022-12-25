@@ -1,0 +1,22 @@
+/* Added custom styles to add scrollbars to Characters and Planets thanks to:
+https://www.w3schools.com/howto/howto_css_menu_horizontal_scroll.asp */
+div.scrollbar {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollbar a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollbar a:hover {
+  background-color: #777;
+}
+
+.row {
+  flex-wrap: nowrap;
+}

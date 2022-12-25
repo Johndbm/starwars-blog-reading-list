@@ -31,7 +31,7 @@ export const Record = () => {
       </div>
       <div className="text-danger">
         <hr></hr>
-        <div className="row">
+        <div className="row"> {/* Aquí debo diferenciar los resultados entre personajes y planetas */}
             <div className="col">
                 <p className="fw-bold">Name</p>
                 <p>{current?.result.properties.name}</p>
