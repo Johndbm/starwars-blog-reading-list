@@ -3,8 +3,9 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       urlBase: "https://www.swapi.tech/api/",
 
-      characters: [],
-      planets: [],
+      characters: JSON.parse(localStorage.getItem("characters")) || [],
+      planets: JSON.parse(localStorage.getItem("planets")) || [],
+      favorites: [],
     },
     actions: {
       getCharacters: async () => {
@@ -46,6 +47,15 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.log(error);
         }
+      },
+      setFavorite: (name) => {
+        const store = getStore();
+        setStore({ favorites: [...store.favorites, name] });
+      },
+      deleteFavorite: (name) => {
+        const store = getStore();
+        let newFav = store.favorites.filter((index) => index !== name);
+        setStore({ favorites: newFav});
       },
     },
   };

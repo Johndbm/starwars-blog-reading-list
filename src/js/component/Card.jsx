@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 // import { Record } from "../views/Record";
 
@@ -10,6 +11,7 @@ mostrar la nueva vista con el Detalle de cada Item (personaje o planeta)
 
 export const Card = ({ item, nature }) => {
   const navigate = useNavigate();
+  const { store, actions } = useContext(Context);
 
   return (
     <div className="col">
@@ -40,11 +42,22 @@ export const Card = ({ item, nature }) => {
               >
                 Learn more!
               </button>
-              <button
-              className="btn btn-outline-warning"
-              >
-                💛
-                </button>
+
+              { store.favorites.includes(item.result.properties.name) ? (
+                <button
+                  className="btn btn-outline-warning"
+                  onClick={() => actions.deleteFavorite(item.result.properties.name)}
+                >
+                  💛
+                  </button>
+                ) : (
+                  <button
+                  className="btn btn-outline-warning"
+                  onClick={() => actions.setFavorite(item.result.properties.name)}
+                >
+                  💛
+                  </button>
+                  )}
             </div>
         </div>
       </div>
